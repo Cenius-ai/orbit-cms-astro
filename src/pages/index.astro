@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostCard from "../components/PostCard.astro";
+import TagCloud from "../components/TagCloud.astro";
+import { getPublishedPosts, buildTaxonomy } from "../lib/utils";
+
+const posts = await getPublishedPosts();
+const categories = buildTaxonomy(posts, "categories");
+const tags = buildTaxonomy(posts, "tags");
+---
+
+<BaseLayout
+  seo={{
+    title: "Orbit",
+    description:
+      "A tech blog about the craft of building for the web — deep dives on JavaScript, TypeScript, Rust, CSS, accessibility, and performance.",
+  }}
+>
+  <section class="home-posts" aria-label="Latest posts">
+    <h2 class="section-label">Latest</h2>
+
+    {posts.length === 0 && (
+      <p class="empty-state">No posts yet. Check back soon!</p>
+    )}
+
+    {posts.map((post) => (
+      <PostCard
+        title={post.data.title}
+        slug={post.slug}
+        date={post.data.date}
+        excerpt={post.data.excerpt}
+        author={post.data.author}
+        categories={post.data.categories}
+        tags={post.data.tags}
+      />
+    ))}
+  </section>
+
+  <aside class="home-sidebar" slot="sidebar">
+    <TagCloud title="Categories" items={categories} basePath="/categories" />
+    <TagCloud title="Tags" items={tags} basePath="/tags" />
+  </aside>
+</BaseLayout>
+
+<style>
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .empty-state {
+    color: var(--color-muted);
+    font-style: italic;
+    padding: 2rem 0;
+  }
+</style>

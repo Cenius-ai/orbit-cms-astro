@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+import "@fontsource/libre-baskerville/700.css";
+import "@fontsource/libre-baskerville/400.css";
+import "@fontsource/source-sans-3/400.css";
+import "@fontsource/source-sans-3/500.css";
+import "@fontsource/source-sans-3/600.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import type { Props as SEOProps } from "../components/SEO.astro";
+import SEO from "../components/SEO.astro";
+
+export interface Props {
+  seo: SEOProps;
+  showSidebar?: boolean;
+}
+
+const { seo, showSidebar = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO {...seo} />
+  </head>
+  <body>
+    <div class="layout">
+      <Header />
+
+      <div class="layout-body">
+        <main id="main-content" class="main-content" tabindex="-1">
+          <slot />
+        </main>
+
+        {
+          showSidebar && (
+            <aside class="sidebar" aria-label="Sidebar">
+              <slot name="sidebar" />
+            </aside>
+          )
+        }
+      </div>
+
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .layout {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .layout-body {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 3rem;
+    flex: 1;
+    padding-top: 2rem;
+  }
+
+  .main-content {
+    min-width: 0;
+  }
+
+  .sidebar {
+    padding-top: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .layout-body {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      order: -1;
+      padding-top: 0;
+    }
+  }
+</style>
