@@ -1,4 +1,4 @@
-# Orbit CMS — open-source blog platform
+# Orbit CMS — production-ready Astro blog platform starter
 
 **Orbit CMS** is a free, open-source blog platform built with Astro. A polished, modern tech blog / publishing CMS built with Astro and TypeScript, featuring content collections for posts, categories, and tags. Run it locally, deploy it as a self-hosted blog platform, or [remix it on cenius.ai](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro) to make it your own — the whole application (code, design, seeded demo data) ships in this repository under the MIT license.
 
@@ -6,7 +6,9 @@
 
 ## Demo
 
-![Orbit CMS demo — blog platform built with Astro](.github/media/hero.gif)
+![Orbit CMS — blog platform](.github/media/poster.png)
+
+![Orbit CMS demo — blog platform built with Astro](.github/media/hero_flagship.gif)
 
 ▶ **[Watch the full demo video](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro)** — the complete walkthrough, playing on the project's cenius.ai page · [MP4 file](.github/media/demo.mp4)
 
