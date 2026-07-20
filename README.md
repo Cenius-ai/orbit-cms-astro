@@ -94,29 +94,29 @@ _Full guide: [`USAGE.md`](USAGE.md)_
 
 ## Architecture
 
-Astro application, delivered as a complete, runnable project (49 files). Top-level layout: `public/`, `src/`. `install.sh` provisions dependencies and seeds demo data, so the app boots with something to show. Setup details live in [`INSTALL.md`](INSTALL.md).
+Astro application, delivered as a complete, runnable project (43 files). Top-level layout: `public/`, `src/`. `install.sh` provisions dependencies and seeds demo data, so the app boots with something to show. Setup details live in [`INSTALL.md`](INSTALL.md).
 
 ## FAQ
 
-### How do I self-host Orbit CMS?
+### What does it take to self-host Orbit CMS?
 
-Clone this repository and run `./install.sh`, then start the app as described in [`INSTALL.md`](INSTALL.md). Orbit CMS is fully self-hostable — no external services are required to try it.
+Everything you need ships in this repo: clone it, run `./install.sh` to install dependencies and seed demo data, then follow [`INSTALL.md`](INSTALL.md) to start it. No external services required.
+
+### Is white-labeling Orbit CMS allowed?
+
+Yes — and the easiest way is [remixing it on cenius.ai](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro): modifications made on the platform come with full rebrand and relicense rights over your derivative.
+
+### Is there a no-code way to modify Orbit CMS?
+
+Yes — [load it on cenius.ai](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro), describe the change in plain English, and you get back a new downloadable build with the modification applied.
+
+### What powers Orbit CMS under the hood?
+
+Orbit CMS is a Astro application — and this repository holds the complete, runnable source, not a stripped-down sample. Highlights include list posts on home page.
 
 ### Is Orbit CMS free for commercial use?
 
 Yes. The code is MIT-licensed — use it, modify it, and ship it commercially. See [LICENSE](LICENSE).
-
-### Can I rebrand or white-label Orbit CMS?
-
-Yes — and the easiest way is [remixing it on cenius.ai](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro): modifications made on the platform come with full rebrand and relicense rights over your derivative.
-
-### How can I customize Orbit CMS without editing code?
-
-Open it on [cenius.ai](https://cenius.ai/marketplace/p/orbit-cms?ref=gh&utm_campaign=orbit-cms-astro) and describe the changes you want in plain English — the platform modifies the app and gives you a new, downloadable build.
-
-### What is Orbit CMS built with?
-
-Astro. The full source in this repository is exactly what the app runs.
 
 ## License & rebranding
 
