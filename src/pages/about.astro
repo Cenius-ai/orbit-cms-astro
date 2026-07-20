@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  seo={{
+    title: "About",
+    description:
+      "Orbit is a tech blog exploring the craft of building for the modern web — deep dives on JavaScript, TypeScript, Rust, CSS, accessibility, and performance.",
+    canonicalURL: new URL("/about", Astro.site).href,
+  }}
+  showSidebar={false}
+>
+  <article class="about-page">
+    <h1>About Orbit</h1>
+
+    <p class="lead">
+      Orbit is a tech blog about the craft of building for the modern web.
+      We publish deep dives on JavaScript, TypeScript, Rust, CSS,
+      accessibility, and web performance — the tools and techniques that
+      shape how we build.
+    </p>
+
+    <hr class="hairline" />
+
+    <section>
+      <h2>What we write about</h2>
+      <p>
+        Every article on Orbit aims to go beyond the surface. We don't
+        publish "10 tips" listicles or framework announcements. Instead, we
+        explore the ideas behind the tools: why a pattern emerged, what
+        trade-offs it makes, and when you should reach for something else.
+      </p>
+      <p>
+        Our contributors are working engineers who write from experience.
+        Maya Chen leads our JavaScript and TypeScript coverage, drawing on
+        years of building large-scale frontend applications. Devon Okonkwo
+        covers CSS, accessibility, and web platform fundamentals, bringing
+        a designer's eye to engineering topics.
+      </p>
+    </section>
+
+    <section>
+      <h2>Our philosophy</h2>
+      <p>
+        We believe that good writing about technology should be:
+      </p>
+      <ul>
+        <li>
+          <strong>Precise</strong> — code examples that actually run,
+          claims backed by data or experience.
+        </li>
+        <li>
+          <strong>Contextual</strong> — every tool and technique exists
+          in a context. We explain the context, not just the syntax.
+        </li>
+        <li>
+          <strong>Enduring</strong> — we'd rather publish one article
+          that's still relevant in three years than ten that are outdated
+          in three months.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical details</h2>
+      <p>
+        Orbit is built with <a href="https://astro.build">Astro</a>, a
+        static site generator that ships zero JavaScript by default. We
+        use Markdown for content authoring, Tailwind CSS for styling, and
+        deploy as static HTML. The site supports light and dark themes via
+        CSS custom properties and respects your operating system
+        preference.
+      </p>
+      <p>
+        All content is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+        The source code is available on GitHub.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .about-page {
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  .about-page h1 {
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--color-muted);
+    line-height: 1.65;
+  }
+
+  .about-page hr {
+    margin: 2rem 0;
+  }
+
+  .about-page section {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-page h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-page ul {
+    padding-left: 1.5rem;
+  }
+
+  .about-page li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+</style>

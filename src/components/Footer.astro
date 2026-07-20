@@ -1,0 +1,52 @@
+<footer class="site-footer">
+  <hr class="hairline" />
+  <div class="footer-content">
+    <p>&copy; {new Date().getFullYear()} Orbit. A tech blog about the craft of building for the web.</p>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/categories">Categories</a>
+      <a href="/tags">Tags</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-content p {
+    margin: 0;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .footer-nav a {
+    padding: 0.25rem 0.5rem;
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease;
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-fg);
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title: string;
+  items: { name: string; slug: string; count: number }[];
+  basePath: string;
+}
+
+const { title, items, basePath } = Astro.props;
+const sorted = items.sort((a, b) => b.count - a.count);
+---
+
+<aside class="tag-cloud" aria-label={title}>
+  <h3 class="cloud-title">{title}</h3>
+  <div class="cloud-items">
+    {sorted.map((item) => (
+      <a href={`${basePath}/${item.slug}`} class="cloud-link">
+        <span class="cloud-name">{item.name}</span>
+        <span class="cloud-count">{item.count}</span>
+      </a>
+    ))}
+  </div>
+</aside>
+
+<style>
+  .tag-cloud {
+    margin-bottom: 2rem;
+  }
+
+  .cloud-title {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .cloud-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .cloud-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.2em 0.65em;
+    font-size: 0.8125rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .cloud-link:hover {
+    border-color: var(--color-accent-300);
+    color: var(--color-accent);
+  }
+
+  .cloud-count {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+</style>
